@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pradeblackwo.github.io/site-m-aiyouxi-com-cn/sitemap.xml
