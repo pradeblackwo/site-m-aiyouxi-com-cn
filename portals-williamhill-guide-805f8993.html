@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>威廉希尔 · 稳定入口与平台说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce7b0 0%, #f8d48c 35%, #f3c06a 70%, #edb456 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.2rem;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 主卡片 — 白色柔和卡片群 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 36px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 12px 30px rgba(140, 90, 20, 0.15), 0 4px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(120, 75, 15, 0.18);
+        }
+
+        /* hero 区域 — 渐变暖意 */
+        .hero {
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            background: linear-gradient(135deg, #fff6e8, #feefe0);
+            border: 1px solid rgba(255, 215, 150, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #4d2e0f;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.15rem;
+            color: #7a5a2e;
+            max-width: 680px;
+            margin: 0 auto 0.5rem;
+            line-height: 1.6;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            background: #ecb77930;
+            padding: 0.3rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            color: #5f421b;
+            border: 1px solid #e5b87b70;
+            margin-top: 0.8rem;
+        }
+
+        /* 用途 / 特点双卡片行 */
+        .dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .dual {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #3d2a11;
+            border-left: 6px solid #e2a555;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card p, .card li {
+            color: #2f2211;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .card ul {
+            padding-left: 1.4rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card li::marker {
+            color: #c9853a;
+        }
+
+        /* 适合人群 — 标签式 */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #f9e5cc;
+            padding: 0.3rem 1.1rem;
+            border-radius: 80px;
+            font-size: 0.9rem;
+            color: #3f2b12;
+            border: 1px solid #eac189;
+            font-weight: 450;
+        }
+
+        /* 链接段落卡片 (自然嵌入) */
+        .link-paragraph {
+            background: #fffbf5f5;
+        }
+
+        .link-paragraph p {
+            font-size: 1.05rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .inline-link {
+            color: #9f5f23;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid #eab676;
+            padding-bottom: 1px;
+            transition: background 0.15s, color 0.2s;
+            border-radius: 4px;
+        }
+
+        .inline-link:hover {
+            background: #eac18960;
+            color: #5b3713;
+            border-bottom-color: #b86f1e;
+        }
+
+        /* FAQ 摘要 — 简约 */
+        .faq-mini {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .faq-item {
+            background: #fcf5ea;
+            border-radius: 20px;
+            padding: 0.8rem 1.2rem;
+            border-left: 4px solid #daa15a;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #4d3111;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item span {
+            font-size: 0.95rem;
+            color: #3b2a14;
+        }
+
+        /* 底部空间 */
+        .footnote {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #6e562e;
+            text-align: center;
+            opacity: 0.85;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #eacaa1;
+            margin: 1.8rem 0 0.5rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="card-grid">
+
+        <!-- HERO 卡片：主视觉 + 稳定入口说明 -->
+        <div class="card hero">
+            <h1>威廉希尔 · 入口与平台说明</h1>
+            <p class="subhead">
+                一个长期保持稳定访问方式的平台入口，面向对其服务有了解需求的用户。本页作为信息索引页，提供关于用途、适用人群及基本使用场景的客观介绍。
+            </p>
+            <div class="meta-badge">持续维护 · 入口信息聚合</div>
+        </div>
+
+        <!-- 双栏：用途卡片 + 特点卡片 -->
+        <div class="dual">
+            <!-- 用途卡片 -->
+            <div class="card">
+                <h2>用途定位</h2>
+                <p>在多数用户的使用场景中，<strong>威廉希尔</strong> 主要作为综合类平台入口，提供信息浏览、赛事数据查阅及部分交互功能。其页面承载的内容偏向资讯整合，同时保持较简洁的导航结构。</p>
+                <p style="margin-top: 0.8rem;">典型使用路径包括：通过主页进入不同功能分区，获取实时更新的数据或内容列表，以及查看平台说明。</p>
+            </div>
+
+            <!-- 特点卡片 -->
+            <div class="card">
+                <h2>页面结构特点</h2>
+                <ul>
+                    <li>首页布局以信息层级清晰为主，减少多余视觉干扰。</li>
+                    <li>采用轻量级框架，页面加载速度相对稳定。</li>
+                    <li>关键入口始终置于明显位置，降低寻找成本。</li>
+                    <li>支持多终端自适应 — 桌面及移动设备均可正常浏览。</li>
+                </ul>
+                <p style="margin-top: 0.6rem;">长期使用中，其页面结构变化幅度较小，适合作为固定参考入口。</p>
+            </div>
+        </div>
+
+        <!-- 适合人群 + 场景混合卡片 -->
+        <div class="card">
+            <h2>适合人群与常见场景</h2>
+            <p>以下群体可能是该平台的主要访问者，但不仅限于此：</p>
+            <div class="tag-group">
+                <span class="tag">资讯查阅者</span>
+                <span class="tag">数据追踪用户</span>
+                <span class="tag">平台功能体验者</span>
+                <span class="tag">稳定入口需求者</span>
+                <span class="tag">界面简洁偏好者</span>
+            </div>
+            <div style="margin-top: 1.4rem; background: #fdf4e6; border-radius: 24px; padding: 1rem 1.2rem;">
+                <p style="font-weight: 450; margin-bottom: 0.5rem;">📌 场景举例</p>
+                <p>用户通过固定书签或直接输入域名进入，查看当日更新内容；或在使用过程中将平台作为信息比对来源之一。部分用户借助其结构稳定的特点，将其设为常用入口。</p>
+            </div>
+        </div>
+
+        <!-- 自然链接段落卡片 (核心链接) -->
+        <div class="card link-paragraph">
+            <h2 style="border-left-color: #c9853a;">关于访问与入口</h2>
+            <p>若你需要直接访问该平台，建议使用主流浏览器并确保网络环境稳定。平台主域为 <a href="https://portals-williamhill.com" class="inline-link">威廉希尔</a>，该地址长期指向同一服务页面。建议首次访问时核对页面标题及布局特征，避免仿冒界面。</p>
+            <p style="margin-top: 0.6rem;">部分网络环境下可能需要进行临时调整，但一般情况下直接通过上述域名即可进入。平台本身不提供额外的跳转中介，因此将 <strong>威廉希尔</strong> 作为固定书签是较为稳妥的使用习惯。</p>
+            <p style="margin-top: 0.5rem; font-size: 0.95rem; color: #5f4a2a;">🔍 提示：如果页面无法加载，可先检查本地网络连接，或稍后重试。平台没有强制要求额外软件。</p>
+        </div>
+
+        <!-- FAQ 摘要卡片 -->
+        <div class="card">
+            <h2>常见疑问摘要</h2>
+            <div class="faq-mini">
+                <div class="faq-item">
+                    <strong>这个平台需要注册吗？</strong>
+                    <span>部分功能可能需要创建账户，但信息浏览类页面通常无需登录。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>移动端显示是否正常？</strong>
+                    <span>页面采用响应式设计，在手机与平板上均可自适应布局，交互区域大小合适。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>如何确认当前访问的是官方页面？</strong>
+                    <span>可通过浏览器地址栏核对域名是否为 portals-williamhill.com，并观察页面风格是否与本页描述一致。</span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="footnote">
+            本页为信息介绍页，内容仅供参考。平台所有权归属相关运营方。
+        </div>
+    </div>
+</div>
+</body>
+</html>
