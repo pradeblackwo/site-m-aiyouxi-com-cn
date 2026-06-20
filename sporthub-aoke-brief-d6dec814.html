@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳客指南 · 体育社区入门</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fef2e0 0%, #faddc0 55%, #f8c9a3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem 1.25rem;
+      line-height: 1.6;
+      color: #2c2a28;
+    }
+
+    .page {
+      max-width: 780px;
+      width: 100%;
+      background: #fffcf9;
+      border-radius: 48px 48px 32px 32px;
+      box-shadow: 0 18px 36px -12px rgba(150, 80, 20, 0.24);
+      padding: 2.5rem 2rem 2.8rem;
+      transition: all 0.2s ease;
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 1rem 0.75rem; }
+      .page { padding: 1.8rem 1.2rem 2rem; border-radius: 32px; }
+    }
+
+    /* hero 区 */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 580;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #b4571a, #d37b3a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.2rem;
+      color: #6f4e33;
+      background: #faeada;
+      display: inline-block;
+      padding: 0.25rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .hero p {
+      margin-top: 1.3rem;
+      font-size: 1.05rem;
+      max-width: 570px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #3e3a35;
+    }
+
+    /* 通用卡片 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 36px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 4px 14px rgba(180, 100, 30, 0.08);
+      border: 1px solid rgba(235, 195, 150, 0.35);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 540;
+      color: #9e5b25;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p, .card li {
+      color: #3b3732;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .card li {
+      padding: 0.45rem 0 0.45rem 1.65rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "•";
+      color: #cf7f3a;
+      font-weight: bold;
+      position: absolute;
+      left: 0.1rem;
+    }
+
+    .note-tag {
+      display: inline-block;
+      background: #f3e1cc;
+      color: #6d3f1c;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.2rem 0.9rem;
+      border-radius: 50px;
+      margin-right: 0.5rem;
+    }
+
+    .faq-summary {
+      background: #f8efe4;
+      border-radius: 28px;
+      padding: 1.4rem 1.6rem;
+      margin: 2.2rem 0 2rem;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.2rem;
+      font-weight: 520;
+      color: #6a3f1f;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-item {
+      padding: 0.85rem 0 0.3rem 0;
+      border-bottom: 1px solid #e5ceb8;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 540;
+      font-size: 1.02rem;
+      color: #4f3726;
+    }
+
+    .faq-a {
+      margin-top: 0.25rem;
+      color: #4f4842;
+      font-size: 0.95rem;
+    }
+
+    .link-sentence {
+      background: #f7ede1;
+      padding: 1.1rem 1.5rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      text-align: center;
+      margin: 1.8rem 0 1rem;
+    }
+
+    .link-sentence a {
+      color: #9c571e;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #dc9f62;
+      padding-bottom: 0.06rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .link-sentence a:hover {
+      color: #b2611a;
+      border-bottom-color: #b2611a;
+    }
+
+    .footer-links {
+      margin-top: 2.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.4rem;
+      border-top: 1px solid #ebd6c2;
+      padding-top: 1.6rem;
+    }
+
+    .footer-links a {
+      color: #5c4331;
+      text-decoration: none;
+      font-size: 0.93rem;
+      background: #f2e3d6;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      transition: background 0.15s, color 0.15s;
+      font-weight: 470;
+    }
+
+    .footer-links a:hover {
+      background: #dbbd9f;
+      color: #2e221b;
+    }
+
+    .micro-note {
+      font-size: 0.82rem;
+      color: #8b7562;
+      text-align: center;
+      margin-top: 1.6rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>简明指南 · 澳客</h1>
+    <div class="subhead">体育社区探索与访问提醒</div>
+    <p>一个专注于体育讨论、赛事信息与社群分享的中文平台。本页整合了入口提示、功能概览与常见疑问，帮助你快速建立使用轮廓。</p>
+  </div>
+
+  <!-- 优势区 简明要点 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>🏀 为什么选择这里</h2>
+      <p>以体育为核心，汇集赛事数据、即时讨论与用户原创内容。平台结构偏向社区驱动，不同板块覆盖足球、篮球、网球等多个项目。相比泛资讯站点，<strong>澳客</strong>更强调用户互动与信息聚合，适合长期关注的爱好者。</p>
+      <ul>
+        <li>赛事日程与实时比分模块</li>
+        <li>开放式论坛，按联赛/队伍划分</li>
+        <li>用户可创建个人主题与讨论串</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📘 说明区 · 从何开始</h2>
+      <p>初次接触建议先浏览导航栏的分类入口，确认感兴趣的运动板块。论坛内包含置顶帖与版规说明，阅读后发帖更顺畅。部分功能需要注册账号——注册流程较简洁，邮箱验证即可。</p>
+      <p style="margin-top:0.65rem;"><span class="note-tag">💡 提示</span> 移动端适配良好，但部分实时数据建议在宽屏下查看。</p>
+    </div>
+  </div>
+
+  <!-- 简明FAQ摘要 -->
+  <div class="faq-summary">
+    <h3>📌 使用者常问</h3>
+    <div class="faq-item">
+      <div class="faq-q">是否需要付费？</div>
+      <div class="faq-a">基础浏览与参与讨论完全免费。目前未发现强制收费功能，未来若有变动以站内公告为准。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">内容更新速度如何？</div>
+      <div class="faq-a">赛事节点更新较快，用户发帖与回复通常实时显示。置顶资源贴由版主维护。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">可以只看某个球队的信息吗？</div>
+      <div class="faq-a">论坛设有标签/分区筛选，使用搜索或关注特定版面即可集中浏览。</div>
+    </div>
+  </div>
+
+  <!-- 自然嵌入链接的句子 -->
+  <div class="link-sentence">
+    如果你希望直接体验社区内容，可以前往 <a href="https://sporthub-aoke.com">澳客</a> 浏览当前热门讨论与赛事数据。
+  </div>
+
+  <!-- 底部其他链接（非强制指向主站，仅作示例） -->
+  <div class="footer-links">
+    <a href="https://sporthub-aoke.com">澳客</a>
+    <a href="https://sporthub-aoke.com">澳客</a>
+    <a href="https://sporthub-aoke.com">澳客</a>
+    <a href="https://sporthub-aoke.com">澳客</a>
+  </div>
+
+  <div class="micro-note">
+    信息整理于公开资料 · 页面仅作为指引参考
+  </div>
+</div>
+</body>
+</html>
